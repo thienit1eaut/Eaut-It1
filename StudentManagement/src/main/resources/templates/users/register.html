@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng hồ THL Watches</title>
+
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/swiper-bundle.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/jquery.fancybox.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/scss/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/scss/style-mobile.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/thien-style.css}">
+</head>
+<body class="not-home">
+<header class="fixed">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <span class="slogan-hd mr-5">Cửa hàng đồng hồ chính hãng THEKEY LUXURY</span>
+                    <a href="#" class="hv-link smooth" title="Hotline: 0855.29.29.29"><i class="fa fa-phone-square" aria-hidden="true"></i> Hotline: 0855.29.29.29</a>
+                </div>
+                <div class="col-md-5 d-flex align-items-center justify-content-end">
+                    <div class="search-top text-center">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                    <div class="heart-top text-center">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="cart-top text-center">
+                        <div class="cart-mini">
+                            <a href="#" title="Giỏ hàng">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                            </a>
+                            <span>0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 d-flex align-items-center">
+                    <a href="#" class="hd-logo" title="LOGO">
+                        <img th:src="@{/assets/frontend/images/logo-1.png}" alt="" title="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-md-10">
+                    <div class="main-menu d-flex align-items-center justify-content-end">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Sản phẩm</a></li>
+                            <li><a href="#">Review</a></li>
+                            <li><a href="#">Thu mua</a></li>
+                            <li><a href="#">Báo chí</a></li>
+                            <li><a href="#">Tin tức</a></li>
+                            <li><a href="#">Tư vấn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="wrapper_breacrumb">
+    <div class="container">
+        <ul class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="#">
+                    <span itemprop="name">Trang chủ</span>
+                </a>
+                <meta itemprop="position" content="1">
+            </li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <a itemprop="item" href="#">
+                    <span itemprop="name">Thông tin khách hàng</span>
+                </a>
+                <meta itemprop="position" content="2">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="section_all section_page_new">
+    <div class="container">
+        <div class="title_all text-center">
+            <h1 class="text-title after-title">THÔNG TIN ĐOÀN VIÊN</h1>
+        </div>
+        <div class="row mb-lg-4 mb-3">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <form th:action="@{/user/register}" th:object="${user}" method="POST" class="form-connect-main">
+                	<h3 class="fs-20 text-uppercase main_color pb-lg-3">THÔNG TIN</h3>
+                	<div class="row">
+	                	<div class="col-md-6 mb-4">
+	                		<input type="text" name="name" class="form-control input-form" placeholder="Họ và tên">
+	                	</div>
+	                	<div class="col-md-6 mb-4">
+	                		<input type="text" name="username" class="form-control input-form" placeholder="Tên đăng nhập">
+	                	</div>
+	                	<div class="col-md-6 mb-4">
+	                		<input type="password" name="password" class="form-control input-form" placeholder="Mật khẩu">
+	                	</div>
+	                	<div class="col-md-6 mb-4">
+	                		<input type="text" name="phone" class="form-control input-form" placeholder="Số điện thoại">
+	                	</div>
+	                	<div class="col-md-6 mb-4">
+	                		<input type="text" name="email" class="form-control input-form" placeholder="Email">
+	                	</div>
+	                	<div class="col-md-6 mb-4">
+	                		<input type="text" name="address" class="form-control input-form" placeholder="Địa chỉ">
+	                	</div>
+	                	<div class="col-lg-12 mb-4">
+	                		<textarea rows="4" cols="20" placeholder="Nội dung" name="content" class="form-control input-form input-content-form"></textarea>
+	                	</div>
+	                	<div class="col-lg-12 mb-4 d-flex justify-content-center">
+	                		<button type="submit" class="btn-submit-form smooth">Gửi thông tin</button>
+	                	</div>
+	                </div>
+                </form>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <a href="" class="img-logo">
+                    <img th:src="@{/assets/frontend/images/logo-1.png}" alt="" title="" class="img-fluid">
+                </a>
+                <p class="slogan-web mt-3">CỬA HÀNG ĐỒNG HỒ CHÍNH HÃNG THL WATCHES</p>
+                <div class="list__cefti d-flex mt-lg-4 pt-lg-1 mt-2">
+                    <a href="#" title="DMCA" class="img d-block mr-2" rel="nofollow">
+                        <img th:src="@{/assets/frontend/images/dmca.png}" alt="" title="" class="img-fluid">
+                    </a>
+                    <a href="#" title="DMCA" class="img d-block" rel="nofollow">
+                        <img th:src="@{/assets/frontend/images/bo-cong-thuong.png}" alt="" title="" class="img-fluid">
+                    </a>
+                </div>
+                <p class="copy__right mt-3">Copyright ©2021 TheKey Luxury. All rights reserved</p>
+            </div>
+            <div class="col-lg-4">
+                <P class="title-footer">DÀNH CHO NGƯỜI DÙNG</P>
+                <div class="menu-footer">
+                    <ul>
+                        <li><a href=""> Chính sách thanh toán </a></li>
+                        <li><a href=""> Chính sách đổi trả </a></li>
+                        <li><a href=""> Chính sách vận chuyển </a></li>
+                        <li><a href=""> Chính sách bảo mật thông tin </a></li>
+                        <li><a href=""> Chính sách bảo hành sản phẩm </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <P class="title-footer">THL WATCHES LUXURY</P>
+                <div class="s-content">
+                    <p>Số 260-262 Bà Triệu, Lê Đại Hành, Hai Bà Trưng, Hà Nội</p>
+                    <p>Hotline Tư Vấn: <a href="#">0855.29.29.29</a></p>
+                    <p>Email: <a href="#">thekeysupport@gmail.com</a></p>
+                    <p class="d-flex align-items-center link-map"><span class="mr-2">Bản đồ đường đi</span> <a href="#"><img th:src="@{/assets/frontend/images/icon-map.png}" alt="" title="" class="icon-map img-fluid" width="24" height="24"></a></p>
+                    <p class="link_social d-flex align-items-center">
+                        <span class="mr-3">KẾT NỐI VỚI CHÚNG TÔI:</span>
+                        <a href="#" class="mr-3"><i class="icon-social fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a href="#"><i class="icon-social fa fa-youtube-play" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script defer th:src="@{/assets/frontend/js/jquery-3.4.0.min.js}"></script>
+<script defer th:src="@{/assets/frontend/js/bootstrap.min.js}"></script>
+<script defer th:src="@{/assets/frontend/js/swiper-bundle.min.js}"></script>
+<script defer th:src="@{/assets/frontend/js/jquery.fancybox.min.js}"></script>
+<script defer th:src="@{/assets/frontend/js/script-slide.js}"></script>
+<script defer th:src="@{/assets/frontend/js/script.js}"></script>
+</body>
+</html>

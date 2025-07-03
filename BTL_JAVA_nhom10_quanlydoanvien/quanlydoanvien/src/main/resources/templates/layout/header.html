@@ -1,0 +1,43 @@
+<header class="header d-flex justify-content-between" th:fragment="header">
+    <div class="nav-control d-flex align-items-center justify-content-center">
+        <button type="button" class="btn-nav smooth">
+            <svg viewBox="64 64 896 896" focusable="false" fill="currentColor" width="1em" height="1em" data-icon="menu-fold" aria-hidden="true"><path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 000 13.8z"></path></svg>
+        </button>
+    </div>
+    <div class="menu-right-hd">
+        <ul>
+            <li>
+                <a href="#" class="item-menu smooth" title="">
+                    <img th:src="@{/assets/frontend/images/bell-regular.png}" class="img-fluid" alt="" title="">
+                    <span class="num">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="item-menu smooth" title="">
+                    <img th:src="@{/assets/frontend/images/icon-mess.png}" class="img-fluid" alt="" title="">
+                    <span class="num">0</span>
+                </a>
+            </li>
+            <li class="user-system">
+                <div class="btn-user-sys d-flex align-items-center">
+                    <div class="avt-user">
+                        <img th:src="@{/assets/frontend/images/no_avatar.png}" class="img-fluid" alt="" title="">
+                    </div>
+                    <div class="info-user">
+                        <span class="name-sv">Bùi Văn Thiện</span>
+                        <span class="code-sv">20220062</span>
+                    </div>
+                </div>
+                <div class="dropdown-content-user">
+                    <div class="it1"><a href="#">Hồ sơ thông tin</a></div>
+                    <div class="it1"><a href="#">Thay đổi mật khẩu</a></div>
+                    <div class="it1">
+                    	<form th:action="@{/logout}" method="post">
+						    <button type="submit" value="Logout" class="" />Đăng xuất</button>
+						 </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>

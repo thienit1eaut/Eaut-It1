@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống đăng nhập</title>
+
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/swiper-bundle.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/jquery.fancybox.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/add-style.css}">
+    
+    <style type="text/css">
+    	.section_all  {
+    		padding: 40px 0;
+    	}
+    	.table-list-data .title-table  {
+    		font-size: 1.25rem;
+    		color: #FBB03B;
+    		font-weight: bold;
+    		text-transform: uppercase;
+    	}
+    </style>
+</head>
+<body>
+    <header class="fixed">
+        <div class="header-top">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                	
+                </div>
+            </div>
+        </div>
+        <div class="header-middle">
+            <div class="bannner-header">
+                <img th:src="@{/assets/frontend/images/bannerEaut.png}" alt="" title="" class="img-fluid">
+            </div>
+        </div>
+    </header>
+
+    <section class="section_all table-list-data">
+        <div class="container">
+        	<div class="d-flex align-item-center justify-content-between">
+        		<h2 class="title-table mb-4">DANH SÁCH ĐOÀN VIÊN</h2>
+        		<div>
+        			<a th:href="@{/member/insert}" class="btn btn-success smooth" title="Thêm mới">Thêm mới</a>
+        		</div>
+        	</div>
+            <form th:action="@{/member/update}" method="POST" class="form-connect-main" >
+               	<table class="table table-striped">
+               		<thead>
+					    <tr>
+					      <th scope="col">#</th>
+					      <th scope="col">MÃ DV</th>
+					      <th scope="col">HỌ TÊN</th>
+					      <th scope="col">NGÀY SINH</th>
+					      <th scope="col">GIỚI TÍNH</th>
+					      <th scope="col">CĂN CƯỚC CD</th>
+					      <th scope="col">SĐT</th>
+					      <th scope="col">EMAIL</th>
+					      <th scope="col">ĐỊA CHỈ</th>
+					      <th scope="col">CHỨC VỤ</th>
+					      <th scope="col">#</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr th:each="member : ${members}">
+					      <th scope="row">1</th>
+					      <td><span th:text="${member.code}"></span></td>
+					      <td><span th:text="${member.name}"></span></td>
+					      <td><span th:text="${member.birthday}"></span></td>
+					      <td><span th:text="${member.gender}"></span></td>
+					      <td><span th:text="${member.cccd}"></span></td>
+					      <td><span th:text="${member.phone}"></span></td>
+					      <td><span th:text="${member.email}"></span></td>
+					      <td><span th:text="${member.address}"></span></td>
+					      <td><span th:text="${member.position}"></span></td>
+					      <td>
+					      	<a th:href="@{/member/edit/{id}(id=${member.id})}" class="cate-title smooth" title="Thêm mới">Sửa</a>
+					      	<a th:href="@{/member/delete/{id}(id=${member.id})}" onclick="return confirm('Xóa?')">Xóa</a>
+					      </td>
+					    </tr>
+					  </tbody>
+               	</table>
+               </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    
+                </div>
+                <div class="col-lg-5">
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script defer th:src="@{/assets/frontend/js/jquery-3.4.0.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/bootstrap.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/swiper-bundle.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/jquery.fancybox.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/script-slide.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/script.js}"></script>
+</body>
+</html>

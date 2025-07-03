@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{dashboard}">
+<body>
+	<div layout:fragment="content">
+		<div class="d-flex align-items-center mb-3">
+			<h3 class="title-page-ct mr-4">DANH SÁCH USER</h3>
+			<a class="btn btn-primary" th:href="@{/user/create}" role="button">Thêm mới</a>
+		</div>
+        <div class="table-data-style table-responsive-md">
+            <table class="table" style="font-size: 14px;">
+                <thead>
+                    <tr>
+                        <th scope="col">HỌ VÀ TÊN</th>
+                        <th scope="col">USERNAME</th>
+                        <th scope="col">ROLE</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">GHI CHÚ</th>
+                        <th scope="col" class="text-center">CHỨC NĂNG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.username}"></td>
+                        <td th:text="${user.role}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td th:text="${user.NOTE}"></td>
+                        <td class="text-center" style="width: 11%;">
+                        	<a th:href="@{/user/view/{id}(id=${user.id})}" class="text-info smooth mr-3" title="View"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        	<a th:href="@{/user/edit/{id}(id=${user.id})}" class="text-success smooth mr-3" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        	<a th:href="@{/user/delete/{id}(id=${user.id})}" class="text-danger smooth" onclick="return confirm('Bạn có chắc xóa user này?')" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+</body>
+</html>

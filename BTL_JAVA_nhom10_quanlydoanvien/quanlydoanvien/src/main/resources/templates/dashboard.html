@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HỆ THỐNG QUẢN LÝ ĐOÀN VIÊN - TRƯỜNG ĐẠI HỌC CÔNG NGHỆ ĐÔNG Á</title>
+
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/toastr.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/main-style.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/scss/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/scss/mobile-style.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/custom-style.css}">
+    <script>
+        var typeNotify = '';
+        var messageNotify = '';
+    </script>
+</head>
+<body>
+<main class="main-system">
+     <!-- Navbar left start -->
+     <div th:replace="layout/navbar-left :: navbar-left"></div>
+     <!-- Navbar left end -->
+     <div class="main-content">
+     	<!-- Header start -->
+     	<div th:replace="layout/header :: header"></div>
+     	<!-- Header end -->
+         
+         <section class="page-content-s" layout:fragment="content">
+			<!-- Nội dung trang con sẽ được chèn vào đây -->
+         </section>
+         
+         <!-- Footer start -->
+     	<div th:replace="layout/footer :: footer"></div>
+     	<!-- Footer end -->
+     </div>
+</main>
+</body>
+
+<script defer th:src="@{/assets/frontend/js/jquery-3.7.1.min.js}"></script>
+<script defer th:src="@{/assets/frontend/js/bootstrap.min.js}"></script>
+<script defer th:src="@{/assets/frontend/js/toastr.min.js}"></script>
+<script defer th:src="@{/assets/frontend/js/valiForm.min.js}"></script>
+<script defer th:src="@{/assets/frontend/js/script.js}"></script>
+<script defer th:src="@{/assets/frontend/js/support.js}"></script>
+</body>
+</html>

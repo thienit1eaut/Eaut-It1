@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{dashboard}">
+<body>
+	<div layout:fragment="content">
+		<div class="nav-tab-content">
+             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                 <li class="nav-item" role="presentation">
+                     <button class="nav-link active" id="pills_tab__1" data-toggle="pill" data-target="#pills-tab-id-1" type="button" role="tab" aria-controls="pills-tab-id-1" aria-selected="true">
+                         <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" width="17" height="17">
+                             <path id="Shape 534" fill-rule="evenodd" class="s0" d="m8.5 17c-4.7 0-8.5-3.8-8.5-8.5 0-4.7 3.8-8.5 8.5-8.5 4.7 0 8.5 3.8 8.5 8.5 0 4.7-3.8 8.5-8.5 8.5zm6.3-4.6c1.6-2.2 1.8-6.4-1.2-9.3-2.9-2.8-7.5-2.7-10.4 0.2-2.8 2.8-2.5 7-0.9 9.2q0.3-1.4 1.1-2.6 0.9-1.1 2.2-1.8c-1.3-1.8-0.9-3.9 0.4-5 1.3-1.2 3.3-1.3 4.8-0.2q1 0.8 1.3 2.2c0.3 1.1 0 2.1-0.7 3 2.1 1.4 2.4 1.8 3.4 4.3zm-6.3 3.5q2.9 0 5-1.9c0.3-0.2 0.3-0.4 0.3-0.7-0.3-1.9-1.2-3.4-3-4.3-0.1 0-0.3 0-0.4 0.1q-1.9 1-3.8 0c-0.1-0.1-0.3-0.1-0.4-0.1-1.8 0.9-2.7 2.4-3 4.3 0 0.3 0 0.5 0.3 0.7q2.1 1.9 5 1.9zm2.6-10c0-1.5-1.1-2.7-2.6-2.7-1.5 0-2.6 1.1-2.6 2.6-0.1 1.5 1.1 2.7 2.6 2.7 1.5 0 2.6-1.2 2.6-2.6z"></path>
+                         </svg>
+                         <span>Thông tin cá nhân</span>
+                     </button>
+                 </li>
+             </ul>
+             <div class="tab-content" id="pills-tabContent">
+                 <div class="tab-pane fade show active" id="pills-tab-id-1" role="tabpanel" aria-labelledby="pills_tab__1">
+                     <h3 class="title-tab-content mb-4">Thông tin USER</h3>
+                     <div class="s-content-tab">
+                         <div class="group-input-style">
+                         	<form action="" method="POST" class="ajaxform" data-success="ALERT.reload" th:object="${user}">
+	                             <div class="row">
+	                                 <div class="col-lg-3 col-md-6">
+	                                     <div class="input-group input-group-style">
+	                                         <span class="label" id="lblHoTen">Họ và tên</span>
+	                                         <input name="name" type="text" class="form-control input-frm" th:field="*{name}" crequired text-crequired="Nhập vào họ và tên" readonly>
+	                                     </div>
+	                                 </div>
+	                                 <div class="col-lg-3 col-md-6">
+	                                     <div class="input-group input-group-style">
+	                                         <span class="label" id="lblHoTen">Username</span>
+	                                         <input name="username" type="text" class="form-control input-frm" th:field="*{username}" crequired text-crequired="Nhập vào họ và tên" readonly>
+	                                     </div>
+	                                 </div>
+	                                 <div class="col-lg-3 col-md-6">
+	                                     <div class="input-group input-group-style">
+	                                         <span class="label" id="lblHoTen">Email</span>
+	                                         <input name="email" type="text" class="form-control input-frm" th:field="*{email}" crequired text-crequired="Nhập vào họ và tên" readonly>
+	                                     </div>
+	                                 </div>
+	                                 <div class="col-lg-3 col-md-6">
+	                                     <div class="input-group input-group-style">
+	                                         <span class="label" id="lblHoTen">Ghi chú</span>
+	                                         <input name="NOTE" type="text" class="form-control input-frm" th:field="*{NOTE}" crequired text-crequired="Nhập vào họ và tên" readonly>
+	                                     </div>
+	                                 </div>
+	                                 
+	                             </div>
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+                 
+             </div>
+         </div>
+	</div>
+</body>
+</html>

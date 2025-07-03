@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống đăng nhập</title>
+
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/swiper-bundle.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/jquery.fancybox.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/add-style.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/login-style.css}">
+    
+</head>
+<body>
+    <section class="section_all form-login-main" style="background-image: url('/assets/frontend/images/bg-login.jpg');">
+        <div class="container">
+            <div class="pt-5 d-flex align-item-center justify-content-end">
+                <form th:action="@{/login}" method="POST" th:object="${user}" class="form-login">
+                	<div class="dn-fr-logo mb-4">
+                    	<img th:src="@{/assets/frontend/images/logo-eaut.png}" alt="" title="" class="img-fluid">
+                    </div>
+                    <div class="mb-4 input-group d-block">
+                    	<label>Tên đăng nhập</label>
+                        <input type="text" name="username" class="form-control input-form" placeholder="Tên đăng nhập">
+                    </div>
+                    <div class="mb-4 input-group d-block">
+                    	<label>Nhập mật khẩu</label>
+                        <input type="password" name="password" class="form-control input-form" placeholder="Mật khẩu">
+                    </div>
+                    <div class="mb-4 input-group d-flex">
+                    	<div class="mr-4">
+                    		<input id="chkremember" type="checkbox" name="chkremember">
+                    		<span id="Label1">Lưu mật khẩu</span>
+                    	</div>
+                    	<div>
+                    		<a href="" class="cate-title smooth" title="Quên mật khẩu">Quên mật khẩu</a>
+                    	</div>
+                    </div>
+                    <div class="mb-4 d-flex justify-content-center">
+                        <button type="submit" class="btn-submit-form smooth">Đăng nhập</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script defer th:src="@{/assets/frontend/js/jquery-3.4.0.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/bootstrap.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/swiper-bundle.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/jquery.fancybox.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/script-slide.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/script.js}"></script>
+</body>
+</html>

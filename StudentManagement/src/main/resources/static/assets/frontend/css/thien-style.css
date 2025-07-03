@@ -1,0 +1,33 @@
+.main_color {
+    color: #FBB03B;
+}
+.fs-20 {
+    font-size: 1.25rem;
+}
+.form-connect-main .input-form {
+	height: 3.125rem;
+	padding: .8125rem 1rem;
+    font-family: Roboto-l;
+    font-weight: 300;
+    font-size: .9375rem;
+    border-radius: 0;
+    border-color: #f5f5f5;
+    background-color: #f5f5f5;
+}
+.form-connect-main .input-content-form {
+	height: auto;
+}
+
+.form-connect-main .btn-submit-form {
+    padding: .875rem 3.75rem .75rem;
+    border: .125rem solid #FBB03B;
+    background-color: #FBB03B;
+    border-radius: 2.5rem;
+    z-index: 1;
+    color: #fff;
+    position: relative;
+    z-index: 100;
+}
+.form-connect-main .btn-submit-form {
+    margin-top: 1rem;
+}

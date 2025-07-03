@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{dashboard}">
+<body>
+	<div layout:fragment="content">
+		<div class="d-flex align-items-center mb-3">
+			<h3 class="title-page-ct mr-4">DANH SÁCH ĐOÀN VIÊN</h3>
+			<a class="btn btn-primary" th:href="@{/doanvien/create}" role="button">Thêm mới</a>
+		</div>
+		<div class="fillter-property-data group-input-style">
+             <form th:action="@{/doanvien/search}" method="GET">
+             	<div class="row">
+                 <div class="col-md-3">
+                     <div class="input-group-style">
+                         <span class="label" id="lblMNaSV">Tên đoàn viên</span>
+                         <input name="keyword" type="text" th:value="${keyword}" id="txtMa_sv" class="form-control input-frm" placeholder="Nhập từ khóa tìm kiếm">
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6">
+                     <div class="input-group input-group-style">
+                     	<span class="label" id="lblMNaSV" style="color: #fff;">Tên đoàn viên</span>
+                         <button type="submit" class="btn btn-primary btn-submit-t2 smooth">Tìm kiếm</button>
+                     </div>
+                 </div>
+             </div>
+             </form>
+         </div>
+        <div class="table-data-style table-responsive-md">
+            <table class="table" style="font-size: 14px;">
+                <thead>
+                    <tr>
+                        <th scope="col">MÃ ĐV</th>
+                        <th scope="col">HỌ TÊN</th>
+                        <th scope="col" style="width: 6%;">GIỚI TÍNH</th>
+                        <th scope="col">NGÀY SINH</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">SĐT</th>
+                        <th scope="col">ĐỊA CHỈ</th>
+                        <th scope="col">TRẠNG THÁI HĐ</th>
+                        <th scope="col" class="text-center" style="width: 4%;">KÍCH HOẠT</th>
+                        <th scope="col" class="text-center">CHỨC NĂNG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="dv : ${doanviens}">
+                        <td th:text="${dv.madv}"></td>
+                        <td th:text="${dv.hoten}"></td>
+                        <td th:text="${dv.gioitinh}"></td>
+                        <td th:text="${dv.ngaysinh}"></td>
+                        <td th:text="${dv.email}"></td>
+                        <td th:text="${dv.sdt}"></td>
+                        <td th:text="${dv.diachi}"></td>
+                        <td th:text="${dv.trangthaihd}"></td>
+                        <td th:text="${dv.act}" class="text-center"></td>
+                        <td class="text-center" style="width: 10%;">
+                        	<a th:href="@{/doanvien/view/{id}(id=${dv.id})}" class="text-info smooth mr-3" title="View"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        	<a th:href="@{/doanvien/edit/{id}(id=${dv.id})}" class="text-success smooth mr-3" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        	<a th:href="@{/doanvien/delete/{id}(id=${dv.id})}" class="text-danger smooth" onclick="return confirm('Bạn có chắc xóa user này?')" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+</body>
+</html>

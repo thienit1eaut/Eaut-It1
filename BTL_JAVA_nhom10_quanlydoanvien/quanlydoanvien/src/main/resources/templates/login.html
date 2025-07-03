@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐĂNG NHẬP - HỆ THỐNG QUẢN LÝ ĐOÀN VIÊN</title>
+
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/css/main-style.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/scss/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/frontend/scss/mobile-style.css}">
+</head>
+    <div class="main-login" style="background-image: url('assets/frontend/images/bg-login.jpg');background-repeat: no-repeat;">
+        <form th:action="@{/login}" method="post" th:object="${user}" class="form-login-sys d-flex align-items-center justify-content-end">
+            <div class="dn-frm">
+                <div class="dn-frm-logo mb-5 d-flex align-items-center justify-content-center">
+                    <img th:src="@{/assets/frontend/images/logo-eaut-1.png}" class="img-fluid" alt="" title="">
+                </div>
+                <div class="input-group mb-4">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" name="username" class="form-control input-frm" placeholder="Tên đăng nhập">
+                </div>
+                <div class="input-group mb-4">
+                    <label>Nhập mật khẩu</label>
+                    <input type="password" name="password" class="form-control input-frm" placeholder="Mật khẩu">
+                </div>
+                <div class="input-group mb-5 d-flex align-items-center">
+                    <div class="form-group form-check mr-4 mb-0">
+                        <input type="checkbox" name="save-pass" class="form-check-input" id="save-pass">
+                        <label class="form-check-label mb-0" for="save-pass">Lưu mật khẩu</label>
+                    </div>
+                    <div class="forgot-pass">
+                        <a href="#" class="link-style-1 smooth" title="Quên mật khẩu?">Quên mật khẩu?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit-1 smooth">ĐĂNG NHẬP</button>
+            </div>
+        </form>
+    </div>
+    <script defer th:src="@{/assets/frontend/js/jquery-3.7.1.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/bootstrap.min.js}"></script>
+    <script defer th:src="@{/assets/frontend/js/script.js}"></script>
+</body>
+</html>

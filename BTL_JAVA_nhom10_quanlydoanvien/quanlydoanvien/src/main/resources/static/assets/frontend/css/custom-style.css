@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.table-data-style .table {
+	font-size: 14px;
+}
+.table-data-style .table tr th, 
+.table-data-style .table tr td {
+	padding: 8px 12px	
+}

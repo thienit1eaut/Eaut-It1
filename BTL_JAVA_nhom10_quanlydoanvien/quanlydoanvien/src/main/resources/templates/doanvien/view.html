@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{dashboard}">
+<body>
+	<div layout:fragment="content">
+		<h3 class="title-page-ct">CHƯƠNG TRÌNH ĐÀO TẠO KHUNG</h3>
+        <div class="fillter-property-data group-input-style">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="input-group-style">
+                        <span class="label" id="lblMNaSV">Chuyên ngành đào tạo</span>
+                        <select name="DropDownListCTDT" class="form-control input-select-frm">
+                            <option selected="selected" value="1">Chuyên Ngành Chính</option>
+                            <option value="2">Chuyên Ngành 2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="input-group-style">
+                        <span class="label" style="color: #fff;">aaaa</span>
+                        <input name="txtMa_sv" type="text" value="20220062" id="txtMa_sv" class="form-control input-frm" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-data-style table-responsive-md">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">HỌ VÀ TÊN</th>
+                        <th scope="col">USERNAME</th>
+                        <th scope="col">ROLE</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">GHI CHÚ</th>
+                        <th scope="col">THỜI GIAN TẠO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td>${user.name}</td>
+                        <td>${user.username}</td>
+                        <td>${user.role}</td>
+                        <td>${user.email}</td>
+                        <td>${user.note}</td>
+                        <td>${user.create_at}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+</body>
+</html>
